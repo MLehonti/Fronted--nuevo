@@ -1,0 +1,128 @@
+.crear-categoria-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crear-categoria-title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.crear-categoria-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.crear-categoria-button {
+  background-color: #61b469;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.crear-categoria-button:hover {
+  background-color: #519759;
+}
+
+.categoria-list-title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #555;
+}
+
+.categoria-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.categoria-list-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+.categoria-list-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos para pantallas pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+  .crear-categoria-container {
+    padding: 15px;
+    margin: 10px;
+    box-shadow: none;  /* Eliminar sombra en pantallas pequeñas */
+    border: 1px solid #ddd;  /* Añadir borde */
+  }
+
+  .crear-categoria-title {
+    font-size: 20px;
+  }
+
+  .crear-categoria-input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .crear-categoria-button {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+
+  .categoria-list-item {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .categoria-list-title {
+    font-size: 18px;
+  }
+}
+
+/* Estilos para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .crear-categoria-container {
+    padding: 10px;
+  }
+
+  .crear-categoria-title {
+    font-size: 18px;
+  }
+
+  .crear-categoria-input {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .crear-categoria-button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .categoria-list-item {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .categoria-list-title {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,171 @@
+/* Estilos del contenedor del Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Espacia el logo y el menú hamburguesa */
+  align-items: center;
+  background-color: #333;
+  padding: 15px;
+  position: relative;  /* Asegura que z-index se aplique correctamente */
+  z-index: 1000; /* Asegurar que el navbar esté por encima de otros elementos */
+}
+
+/* Estilo del logo */
+.navbar-logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilos de los links del Navbar */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Estilos de los items del Navbar */
+.navbar-links li {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilos de los enlaces del Navbar */
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #61b469;
+}
+
+/* Submenú (dropdown) para "Productos" */
+.productos-dropdown {
+  position: relative;
+  z-index: 1000; /* Asegurar que el dropdown esté por encima de otros elementos */
+}
+
+/* Menú desplegable (dropdown) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444; /* Fondo ligeramente más claro para mejor contraste */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el dropdown */
+  z-index: 1001; /* Asegurar que el dropdown se muestre sobre el navbar */
+}
+
+/* Estilos de los elementos del dropdown */
+.dropdown-menu li {
+  display: block;
+}
+
+/* Estilos de los enlaces del dropdown */
+.dropdown-menu a {
+  color: white; /* Mantener el texto blanco */
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Añadir transición suave */
+}
+
+.dropdown-menu a:hover {
+  background-color: #61b469; /* Color de fondo en hover */
+  color: black; /* Cambiar el color del texto en hover para mejor legibilidad */
+}
+
+/* Mostrar el dropdown al hacer hover sobre "Productos" */
+.productos-dropdown:hover .dropdown-menu {
+  display: block;
+  z-index: 1001; /* Asegurar que el menú se muestre sobre el contenido */
+}
+
+/* ------- RESPONSIVE DESIGN ------- */
+
+/* Estilo para dispositivos pequeños */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  /* Botón de menú hamburguesa: se oculta en pantallas grandes y se muestra en pequeñas */
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto; /* Alinear el botón a la derecha */
+  }
+
+  /* Ocultar los enlaces del navbar en pantallas pequeñas */
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+
+  /* Mostrar los enlaces cuando el navbar tiene la clase active */
+  .navbar.active .navbar-links {
+    display: flex;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links a {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+
+  .navbar-links a:hover {
+    background-color: #61b469;
+    color: white;
+  }
+
+  /* Ajustar el dropdown dentro del responsive */
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  /* Ajustar los enlaces dentro del dropdown en dispositivos pequeños */
+  .dropdown-menu a {
+    padding: 10px 20px;
+  }
+
+  /* Ocultar el submenú cuando se hace clic */
+  .productos-dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .productos-dropdown.active .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Mostrar el menú hamburguesa en pantallas pequeñas */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}

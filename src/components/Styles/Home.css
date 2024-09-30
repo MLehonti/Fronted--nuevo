@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Estilos generales de la página */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background-color 1s ease; /* Transición suave para el cambio de fondo */
+}
+
+/* Estilo de la superposición */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Efecto de oscurecimiento sutil */
+    z-index: 1;
+}
+
+/* Estilos del mensaje de bienvenida */
+.welcome-message {
+    z-index: 2;
+    text-align: center;
+    color: white; /* Se ajustará dinámicamente en el JS */
+    font-family: 'Montserrat', sans-serif;
+    transition: color 1s ease; /* Transición suave para el cambio de color del texto */
+}
+
+.welcome-message h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+.welcome-message p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-style: italic;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Animación para el fade-in del texto */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Botón principal */
+.shop-now-button {
+    padding: 15px 40px;
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra */
+}
+
+.shop-now-button:hover {
+    background-color: #e04a49;
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+/* Botón de login */
+.login-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Añadir sombra */
+}
+
+.login-button:hover {
+    background-color: #555;
+}
+
+/* Responsivo: Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .welcome-message h1 {
+        font-size: 3rem; /* Reducir tamaño de fuente */
+    }
+
+    .welcome-message p {
+        font-size: 1.5rem; /* Reducir tamaño de fuente */
+    }
+
+    .shop-now-button {
+        padding: 12px 30px;
+        font-size: 1.2rem; /* Reducir tamaño de fuente */
+    }
+}
+
+/* Responsivo: Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .home-container {
+        padding: 20px; /* Añadir padding en pantallas pequeñas */
+    }
+
+    .welcome-message h1 {
+        font-size: 2rem; /* Reducir tamaño de fuente */
+        margin-bottom: 15px;
+    }
+
+    .welcome-message p {
+        font-size: 1.2rem; /* Reducir tamaño de fuente */
+        margin-bottom: 20px;
+    }
+
+    .shop-now-button {
+        padding: 10px 25px; /* Reducir padding del botón */
+        font-size: 1rem; /* Reducir tamaño de fuente */
+        margin-bottom: 20px; /* Añadir espacio en la parte inferior */
+    }
+
+    .login-button {
+        padding: 8px 15px; /* Ajustar tamaño del botón de login */
+        font-size: 0.9rem; /* Reducir tamaño de fuente */
+        top: 10px; /* Ajustar posición */
+        right: 10px;
+    }
+}

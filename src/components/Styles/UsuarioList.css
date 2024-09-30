@@ -1,0 +1,135 @@
+/* Contenedor principal */
+.usuarios-list-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  padding: 20px 40px; /* Aumentar el padding lateral para asegurar espacio uniforme */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del título */
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Tabla de usuarios */
+.usuarios-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Encabezado y celdas de la tabla */
+.usuarios-table th, .usuarios-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Encabezado de la tabla */
+.usuarios-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Efecto hover en las filas de la tabla */
+.usuarios-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilo de las celdas */
+.usuarios-table td {
+  color: #555;
+  text-align: left;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Estilo del dropdown para seleccionar roles */
+.role-select {
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+}
+
+.role-select:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+/* Botón de asignar rol */
+.assign-role-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.assign-role-button:hover {
+  background-color: #45a049;
+}
+
+/* Hacer la tabla responsiva en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  /* Ocultar encabezado de la tabla */
+  .usuarios-table thead {
+    display: none;
+  }
+
+  /* Hacer las filas de la tabla bloques independientes */
+  .usuarios-table tr {
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  /* Estilo de las celdas en pantallas pequeñas */
+  .usuarios-table td {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  /* Mostrar una etiqueta antes de cada celda */
+  .usuarios-table td::before {
+    content: attr(data-label); /* Mostrar el nombre de la columna */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+    display: inline-block;
+    color: #333;
+  }
+
+  /* Estilo del botón y select en pantallas pequeñas */
+  .role-select, .assign-role-button {
+    width: 100%; /* Hacer que ocupen todo el ancho */
+    margin-bottom: 10px; /* Separación entre elementos */
+  }
+
+  /* Espaciado y centrado */
+  .usuarios-list-container {
+    padding: 15px;
+    width: 90%; /* Reducir el ancho en pantallas pequeñas */
+  }
+
+  .title {
+    font-size: 18px; /* Reducir el tamaño del título */
+  }
+}

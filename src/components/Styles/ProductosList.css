@@ -1,0 +1,197 @@
+/* Contenedor principal de la lista de productos */
+.productos-list-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Cuadrícula de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adaptar a diferentes tamaños */
+  gap: 20px;
+}
+
+/* Tarjeta de producto */
+.producto-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacio entre elementos */
+  text-align: center;
+}
+
+/* Imagen del producto */
+.producto-imagen {
+  width: 100%;
+  height: 180px; /* Altura fija para uniformidad */
+  object-fit: cover; /* Ajustar la imagen sin distorsionarla */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilos de texto */
+h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+p {
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Contenedor de los colores disponibles */
+.colores-disponibles {
+  margin: 10px 0;
+}
+
+/* Estilos para los colores */
+.color-cuadro {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #000;
+  margin: 2px;
+}
+
+/* Contenedor de la cantidad */
+.cantidad-container {
+  margin: 10px 0;
+}
+
+/* Input de cantidad */
+.cantidad-container input {
+  width: 60px; /* Ancho del input */
+  padding: 5px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-left: 10px; /* Espaciado con el label */
+}
+
+/* Botón de agregar al carrito */
+.producto-card button {
+  background-color: #61b469; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Manito al pasar por encima */
+  transition: background-color 0.3s ease; /* Transición suave */
+  margin-top: 10px;
+  width: 100%; /* Botón ocupa todo el ancho */
+}
+
+.producto-card button:hover {
+  background-color: #519759; /* Color al hacer hover */
+}
+
+/* Mensaje de error */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Responsividad para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .producto-imagen {
+    height: 150px; /* Reducir la altura de la imagen */
+  }
+
+  .producto-card {
+    padding: 15px; /* Reducir padding */
+  }
+
+  h3 {
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+  }
+
+  p {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+
+  .cantidad-container input {
+    width: 50px; /* Ancho del input reducido */
+    font-size: 14px; /* Tamaño de fuente reducido */
+  }
+
+  .producto-card button {
+    font-size: 14px; /* Tamaño de fuente del botón reducido */
+    padding: 10px 15px; /* Ajustar padding */
+  }
+}
+
+/* Responsividad para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajustar columnas para móviles */
+    gap: 15px; /* Reducir el espacio entre elementos */
+  }
+
+  .producto-imagen {
+    height: 120px; /* Altura de la imagen reducida */
+  }
+
+  .producto-card {
+    padding: 10px; /* Reducir padding */
+  }
+
+  h3 {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+
+  p {
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+  }
+
+  .cantidad-container input {
+    width: 45px; /* Ancho del input más pequeño */
+  }
+
+  .producto-card button {
+    font-size: 13px; /* Tamaño de fuente más pequeño */
+    padding: 8px 12px; /* Ajustar padding */
+  }
+}
+
+/* Responsividad para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  .productos-grid {
+    grid-template-columns: 1fr; /* Mostrar en una sola columna */
+    gap: 10px; /* Reducir el espacio entre elementos */
+  }
+
+  .producto-imagen {
+    height: 100px; /* Altura de la imagen aún más reducida */
+  }
+
+  .producto-card {
+    padding: 8px; /* Reducir padding */
+  }
+
+  h3 {
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+  }
+
+  p {
+    font-size: 11px; /* Tamaño de fuente más pequeño */
+  }
+
+  .cantidad-container input {
+    width: 40px; /* Ancho del input más pequeño */
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+  }
+
+  .producto-card button {
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    padding: 6px 10px; /* Ajustar padding */
+  }
+}
