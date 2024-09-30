@@ -3,17 +3,24 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const AsignarProductosACategoria = () => {
-  const [categorias, setCategorias] = useState([]); // Inicializado como array vacío
+  const [categorias, setCategorias] = useState([]);
   const [productos, setProductos] = useState([]);
   const [selectedCategoria, setSelectedCategoria] = useState('');
   const [selectedProductos, setSelectedProductos] = useState([]);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Obtener las categorías y productos
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get('https://backedn-nuevo.onrender.com/api/categorias/listar');
+        // Obtener el token almacenado en localStorage
+        const token = localStorage.getItem('token');
+
+        // Realizar la solicitud con el token en las cabeceras
+        const response = await axios.get('https://backedn-nuevo.onrender.com/api/categorias/listar', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         if (Array.isArray(response.data)) {
           setCategorias(response.data);
         } else {
@@ -27,7 +34,15 @@ const AsignarProductosACategoria = () => {
 
     const fetchProductos = async () => {
       try {
-        const response = await axios.get('https://backedn-nuevo.onrender.com/api/productos');
+        // Obtener el token almacenado en localStorage
+        const token = localStorage.getItem('token');
+
+        // Realizar la solicitud con el token en las cabeceras
+        const response = await axios.get('https://backedn-nuevo.onrender.com/api/productos', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         if (Array.isArray(response.data)) {
           setProductos(response.data);
         } else {
@@ -50,9 +65,18 @@ const AsignarProductosACategoria = () => {
     }
 
     try {
+      // Obtener el token almacenado en localStorage
+      const token = localStorage.getItem('token');
+
+      // Realizar la solicitud con el token en las cabeceras
       await axios.post(
         `https://backedn-nuevo.onrender.com/api/categorias/${selectedCategoria}/asignar-productos`,
-        selectedProductos
+        selectedProductos,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Añadir la cabecera de autorización con el token
+          },
+        }
       );
 
       Swal.fire('Asignación exitosa', 'Los productos han sido asignados a la categoría correctamente.', 'success');
